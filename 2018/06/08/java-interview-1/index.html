@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html >
+<head>
+
+    <!--[if lt IE 9]>
+        <style>body {display: none; background: none !important} </style>
+        <meta http-equiv="Refresh" Content="0; url=//outdatedbrowser.com/" />
+    <![endif]-->
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="format-detection" content="telephone=no" />
+<meta name="author" content="Java Ming" />
+<meta name="baidu-site-verification" content="qp2dTXVqvj" />
+
+
+<meta name="keywords" content="">
+
+
+<meta name="description" content="近期再找工作,复习一波面试题，整理一下常见的Java面试题">
+<meta name="keywords" content="java,面试题">
+<meta property="og:type" content="article">
+<meta property="og:title" content="java常见面试题【1】">
+<meta property="og:url" content="https://java2ming.github.io/2018/06/08/java-interview-1/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="近期再找工作,复习一波面试题，整理一下常见的Java面试题">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="https://raw.githubusercontent.com/java2ming/image/master/java/concurrent/1.jpg">
+<meta property="og:updated_time" content="2018-06-08T12:16:25.008Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="java常见面试题【1】">
+<meta name="twitter:description" content="近期再找工作,复习一波面试题，整理一下常见的Java面试题">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/java2ming/image/master/java/concurrent/1.jpg">
+
+<link rel="apple-touch-icon" href= "/apple-touch-icon.png">
+
+
+    <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
+
+
+
+    <link rel="shortcut icon" href="//raw.githubusercontent.com/java2ming/image/master/logo/gin.png">
+
+
+
+    <link href="//cdn.bootcss.com/animate.css/3.5.1/animate.min.css" rel="stylesheet">
+
+
+
+    <link href="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet">
+
+
+
+    <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+    <link href="//cdn.bootcss.com/pace/1.0.2/themes/green/pace-theme-minimal.css" rel="stylesheet">
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+
+
+<link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+
+
+<title>java常见面试题【1】 | Hexo</title>
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.js"></script>
+<script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+
+<script>
+    var yiliaConfig = {
+        fancybox: true,
+        animate: true,
+        isHome: false,
+        isPost: true,
+        isArchive: false,
+        isTag: false,
+        isCategory: false,
+        open_in_new: false,
+        fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
+        scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
+        search: true
+    }
+</script>
+
+
+    <script>
+        yiliaConfig.jquery_ui = [true, "//cdn.bootcss.com/jqueryui/1.10.4/jquery-ui.min.js", "//cdn.bootcss.com/jqueryui/1.10.4/css/jquery-ui.min.css"];
+    </script>
+
+
+
+    <script> yiliaConfig.rootUrl = "\/";</script>
+
+
+
+
+
+
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="https://java2ming.github.io" target="_self" class="profilepic">
+            <img src="//raw.githubusercontent.com/java2ming/image/master/logo/gin.png" alt="logo" class="animated zoomIn">
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/">Java Ming</a></h1>
+        </hgroup>
+
+        
+
+        
+            <form id="search-form">
+            <input type="text" id="local-search-input" name="q" results="0" placeholder="search..." class="search form-control" autocomplete="off" autocorrect="off" searchonload="false" />
+            <i class="fa fa-times" onclick="resetSearch()"></i>
+            </form>
+            <div id="local-search-result"></div>
+            <p class='no-result'>No results found <i class='fa fa-spinner fa-pulse'></i></p>
+        
+
+
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        
+                        <li>关于我</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/">主页</a></li>
+                        
+                            <li><a href="/archives/">所有文章</a></li>
+                        
+                            <li><a href="/friends/">友链&amp;留言板</a></li>
+                        
+                            <li><a href="/about.html">关于我</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" target="_blank" rel="external nofollow" href="/javaming@aliyun.com" title="Email"></a>
+                            
+                                <a class="fa GitHub" target="_blank" rel="external nofollow" href="https://github.com/java2ming" title="GitHub"></a>
+                            
+                                <a class="fa QQ" target="_blank" rel="external nofollow" href="http://wpa.qq.com/msgrd?v=3&uin=772608160&site=qq&menu=yes" title="QQ"></a>
+                            
+                                <a class="fa Twitter" target="_blank" rel="external nofollow" href="https://twitter.com/java2ming" title="Twitter"></a>
+                            
+                                <a class="fa StackOverflow" target="_blank" rel="external nofollow" href="http://stackoverflow.com/users/5804125/hpbest" title="StackOverflow"></a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/html5/">html5</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/">java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/js/">js</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/面试题/">面试题</a></li></ul>
+                    </div>
+                </section>
+                
+                
+                
+
+                
+                
+                <section class="switch-part switch-part3">
+                
+                    <div id="js-aboutme">技术宅、 深圳、 夜猫子、 爱动漫、 2016年毕业、 java开发、 web前端、 前沿技术发烧友、 生命不息折腾不止、</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">Java Ming</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                <img src="//raw.githubusercontent.com/java2ming/image/master/logo/gin.png" alt="logo" class="animated zoomIn">
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页">Java Ming</a></h1>
+            </hgroup>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">主页</a></li>
+                
+                    <li><a href="/archives/">所有文章</a></li>
+                
+                    <li><a href="/friends/">友链&amp;留言板</a></li>
+                
+                    <li><a href="/about.html">关于我</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" target="_blank" rel="external nofollow" href="/javaming@aliyun.com" title="Email"></a>
+                            
+                                <a class="fa GitHub" target="_blank" rel="external nofollow" href="https://github.com/java2ming" title="GitHub"></a>
+                            
+                                <a class="fa QQ" target="_blank" rel="external nofollow" href="http://wpa.qq.com/msgrd?v=3&uin=772608160&site=qq&menu=yes" title="QQ"></a>
+                            
+                                <a class="fa Twitter" target="_blank" rel="external nofollow" href="https://twitter.com/java2ming" title="Twitter"></a>
+                            
+                                <a class="fa StackOverflow" target="_blank" rel="external nofollow" href="http://stackoverflow.com/users/5804125/hpbest" title="StackOverflow"></a>
+                            
+                        </ul>
+            </nav>
+        </header>                
+    </div>
+    <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
+</nav>
+      <div class="body-wrap"><style>
+    .fengmian {
+        float: left;
+        width: 400px;
+        height: 250px;
+    }
+
+    .article img {
+        margin: -1px 20px 5px -1px;
+        border-top-left-radius: 3px;
+        -webkit-border-radius-topleft: 3%;
+        -webkit-transition: all 0.5s;
+        -moz-transition: all 0.5s;
+        -o-transition: all 0.5s;
+    }
+
+    /*.article img:hover{*/
+    /*transform: scale(1, 1.05);*/
+    /*-webkit-transition:all 0.5s;*/
+    /*-moz-transition:all 0.5s;*/
+    /*-o-transition:all 0.5s;*/
+    /*}*/
+</style>
+
+
+<article id="post-java-interview-1" class="article article-type-post" itemscope itemprop="blogPost">
+    
+    <div class="article-meta">
+        <a href="/2018/06/08/java-interview-1/" class="article-date">
+      <time datetime="2018-06-08T09:30:00.000Z" itemprop="datePublished">2018-06-08</time>
+</a>
+    </div>
+    
+    <div class="article-inner">
+        
+        <input type="hidden" class="isFancy"/>
+        
+        <div class="fengmian">
+            <img class="fengmian-image" id="java-interview-1" src="https://raw.githubusercontent.com/java2ming/image/master/cover/bg-60.jpg" alt="封面" onload="loadImage(this.id)"/>
+        </div>
+        
+        <header class="article-header">
+            
+  
+    <h1 class="article-title" itemprop="name">
+      java常见面试题【1】
+    </h1>
+  
+
+        </header>
+        
+        <div class="article-info article-info-post">
+            
+
+            
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/面试题/">面试题</a></li></ul> </div>
+
+
+
+            <!-- 访问量  -->
+            <!--<span id="busuanzi_container_page_pv" style='display:none'>-->
+            <!--<span id="page-visit"><i class="fa fa-eye" style="float: left;margin-top:5px" aria-hidden="true" title="文章访问量"></i>-->
+            <!--<span id="busuanzi_value_page_pv"></span>-->
+            <!--</span>-->
+            <!--</span>-->
+
+            <div class="clearfix"></div>
+        </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            
+            
+            <blockquote>
+<p>近期再找工作,复习一波面试题，整理一下常见的Java面试题</p>
+</blockquote>
+<a id="more"></a>
+<h4> ArrayList的默认长度</h4><br>&gt; ArrayList的底层是由一个Object[]数组构成的，而这个Object[]数组，默认的长度是10,size()方法，指的是“逻辑”长度。<br>所谓“逻辑”长度，是指内存已存在的“实际元素的长度” 而“空元素不被计算”<br>        即：当你利用add()方法，向ArrayList内添加一个“元素”时，逻辑长度就增加1位。 而剩下的9个空元素不被计算。<br>        每次增长 (旧容量*3/2)+1<br><br><h4> Lock与synchronized 的区别</h4>
+
+<blockquote>
+<ol>
+<li>线程A和B都要获取对象O的锁定，假设A获取了对象O锁，B将等待A释放对O的锁定，<br> 如果使用 synchronized ，如果A不释放，B将一直等下去，不能被中断<br>如果使用 ReentrantLock，如果A不释放，可以使B在等待了足够长的时间以后，中断等待，而干别的事情</li>
+<li>synchronized是在JVM层面上实现的，不但可以通过一些监控工具监控synchronized的锁定，而且在代码执行时出现异常，JVM会自动释放锁定，但是使用Lock则不行，lock是通过代码实现的，要保证锁定一定会被释放，就必须将unLock()放到finally{}中</li>
+<li>在资源竞争不是很激烈的情况下，Synchronized的性能要优于ReetrantLock，但是在资源竞争很激烈的情况下，Synchronized的性能会下降几十倍，但是ReetrantLock的性能能维持常态</li>
+</ol>
+</blockquote>
+<h4>mysql索引类型</h4><br>1. 普通索引<br>2. 唯一索引<br>3. 主键索引<br>4. 组合索引<br>5. 全文索引<br><br><h4>事务特性</h4>
+
+<blockquote>
+<p>事务特性分为四个：原子性（Atomicity）、一致性（Consistency）、隔离性（Isolation）、持续性（Durability）简称ACID。</p>
+</blockquote>
+<ul>
+<li><strong>原子性（Atomicity）</strong>:   事务是数据库逻辑工作单元，事务中包含的操作要么都执行成功，要么都执行失败。</li>
+<li><strong>一致性（Consistency）</strong>： 事务执行的结果必须是使数据库数据从一个一致性状态变到另外一种一致性状态。当事务执行成功后就说数据库处于一致性状态。如果在执行过程中发生错误，这些未完成事务对数据库所做的修改有一部分已写入物理数据库，这是数据库就处于不一致状态。</li>
+<li><strong>隔离性（Isolation）</strong>：一个事务的执行过程中不能影响到其他事务的执行，即一个事务内部的操作及使用的数据对其他事务是隔离的，并发执行各个事务之间无不干扰。</li>
+<li><strong>持续性（Durability）</strong>：即一个事务执一旦提交，它对数据库数据的改变是永久性的。之后的其它操作不应该对其执行结果有任何影响。</li>
+</ul>
+<h4>事务的隔离级别</h4>
+
+<blockquote>
+<ol>
+<li>事务的隔离级别也分为四种，由低到高依次分别为：</li>
+</ol>
+<ul>
+<li><strong>read uncommited（读未提交）</strong>：是最低的事务隔离级别，它允许另外一个事务可以看到这个事务未提交的数据。</li>
+<li><strong>read commited（读提交）</strong>：保证一个事物提交后才能被另外一个事务读取。另外一个事务不能读取该事物未提交的数据。</li>
+<li><strong>read repeatable（读重复）</strong>：这种事务隔离级别可以防止脏读，不可重复读。但是可能会出现幻象读。它除了保证一个事务不能被另外一个事务读取未提交的数据之外还避免了以下情况产生（不可重复读）。</li>
+<li><strong>serializable（序列化）</strong>：这是花费最高代价但最可靠的事务隔离级别。事务被处理为顺序执行。除了防止脏读，不可重复读之外，还避免了幻象读。</li>
+</ul>
+</blockquote>
+<blockquote>
+<ol start="2">
+<li>脏读、不可重复读、幻象读概念说明：</li>
+</ol>
+<ul>
+<li><strong>脏读</strong>：指当一个事务正字访问数据，并且对数据进行了修改，而这种数据还没有提交到数据库中，这时，另外一个事务也访问这个数据，然后使用了这个数据。因为这个数据还没有提交那么另外一个事务读取到的这个数据我们称之为脏数据。依据脏数据所做的操作肯能是不正确的。</li>
+<li><strong>不可重复读</strong>：指在一个事务内，多次读同一数据。在这个事务还没有执行结束，另外一个事务也访问该同一数据，那么在第一个事务中的两次读取数据之间，由于第二个事务的修改第一个事务两次读到的数据可能是不一样的，这样就发生了在一个事物内两次连续读到的数据是不一样的，这种情况被称为是不可重复读。</li>
+<li><strong>幻读</strong>：一个事务先后读取一个范围的记录，但两次读取的纪录数不同，我们称之为幻象读（两次执行同一条 select 语句会出现不同的结果，第二次读会增加一数据行，并没有说这两次执行是在同一个事务中）</li>
+</ul>
+</blockquote>
+<p></p><h4>spring事务传播特性</h4><br>    &gt; 事务传播行为就是多个事务方法相互调用时，事务如何在这些方法间传播。spring支持7种事务传播行为：<p></p>
+<ul>
+<li><strong>propagation_requierd</strong>：如果当前没有事务，就新建一个事务，如果已存在一个事务中，加入到这个事务中，这是最常见的选择。</li>
+<li><strong>propagation_supports</strong>：支持当前事务，如果没有当前事务，就以非事务方法执行。</li>
+<li><strong>propagation_mandatory</strong>：使用当前事务，如果没有当前事务，就抛出异常。</li>
+<li><strong>propagation_required_new</strong>：新建事务，如果当前存在事务，把当前事务挂起。</li>
+<li><strong>propagation_not_supported</strong>：以非事务方式执行操作，如果当前存在事务，就把当前事务挂起。</li>
+<li><strong>propagation_never</strong>：以非事务方式执行操作，如果当前事务存在则抛出异常。</li>
+<li><strong>propagation_nested</strong>：如果当前存在事务，则在嵌套事务内执行。如果当前没有事务，则执行与propagation_required类似的操作<blockquote>
+<p>Spring 默认的事务传播行为是 PROPAGATION_REQUIRED，它适合于绝大多数的情况。假设 ServiveX#methodX() 都工作在事务环境下（即都被 Spring 事务增强了），假设程序中存在如下的调用链：Service1#method1()-&gt;Service2#method2()-&gt;Service3#method3()，那么这 3 个服务类的 3 个方法通过 Spring 的事务传播机制都工作在同一个事务中。</p>
+</blockquote>
+</li>
+</ul>
+<p></p><h4>SQL数据库中的范式</h4><br>    &gt; 事务传播行为就是多个事务方法相互调用时，事务如何在这些方法间传播。spring支持7种事务传播行为：<p></p>
+<ul>
+<li><p><strong>第一范式（1NF）</strong>：强调的是列的原子性，即列不能够再分成其他几列。</p>
+<blockquote>
+<p>考虑这样一个表：【联系人】（姓名，性别，电话）<br>如果在实际场景中，一个联系人有家庭电话和公司电话，那么这种表结构设计就没有达到 1NF。要符合 1NF 我们只需把列（电话）拆分，即：【联系人】（姓名，性别，家庭电话，公司电话）。1NF 很好辨别，但是 2NF 和 3NF 就容易搞混淆。</p>
+</blockquote>
+</li>
+<li><p><strong>第二范式（2NF）</strong>：首先是 1NF，另外包含两部分内容，一是表必须有一个主键；二是没有包含在主键中的列必须完全依赖于主键，而不能只依赖于主键的一部分。</p>
+<blockquote>
+<p>考虑一个订单明细表：【OrderDetail】（OrderID，ProductID，UnitPrice，Discount，Quantity，ProductName）。<br>因为我们知道在一个订单中可以订购多种产品，所以单单一个 OrderID 是不足以成为主键的，主键应该是（OrderID，ProductID）。显而易见 Discount（折扣），Quantity（数量）完全依赖（取决）于主键（OderID，ProductID），而 UnitPrice，ProductName 只依赖于 ProductID。所以 OrderDetail 表不符合 2NF。不符合 2NF 的设计容易产生冗余数据。<br>可以把【OrderDetail】表拆分为【OrderDetail】（OrderID，ProductID，Discount，Quantity）和【Product】（ProductID，UnitPrice，ProductName）来消除原订单表中UnitPrice，ProductName多次重复的情况。</p>
+</blockquote>
+</li>
+<li><p><strong>第三范式（3NF）</strong>：首先是 2NF，另外非主键列必须直接依赖于主键，不能存在传递依赖。即不能存在：非主键列 A 依赖于非主键列 B，非主键列 B 依赖于主键的情况。</p>
+<blockquote>
+<p>考虑一个订单表【Order】（OrderID，OrderDate，CustomerID，CustomerName，CustomerAddr，CustomerCity）主键是（OrderID）。<br>其中 OrderDate，CustomerID，CustomerName，CustomerAddr，CustomerCity 等非主键列都完全依赖于主键（OrderID），所以符合 2NF。不过问题是 CustomerName，CustomerAddr，CustomerCity 直接依赖的是 CustomerID（非主键列），而不是直接依赖于主键，它是通过传递才依赖于主键，所以不符合 3NF。<br>通过拆分【Order】为【Order】（OrderID，OrderDate，CustomerID）和【Customer】（CustomerID，CustomerName，CustomerAddr，CustomerCity）从而达到 3NF。</p>
+</blockquote>
+<p>  第二范式（2NF）和第三范式（3NF）的概念很容易混淆，区分它们的关键点在于，2NF：非主键列是否完全依赖于主键，还是依赖于主键的一部分；3NF：非主键列是直接依赖于主键，还是直接依赖于非主键列。</p>
+</li>
+</ul>
+<p></p><h4>JDK并发包 java.util.concurrent</h4><br><img src="https://raw.githubusercontent.com/java2ming/image/master/java/concurrent/1.jpg" alt="Alt text"><p></p>
+<blockquote>
+<p>外层框架主要有Lock(ReentrantLock、ReadWriteLock等)、同步器（semaphores等）、阻塞队列（BlockingQueue等）、Executor（线程池）、并发容器（ConcurrentHashMap等）、还有Fork/Join框架；<br>内层有AQS（AbstractQueuedSynchronizer类，锁功能都由他实现）、非阻塞数据结构、原子变量类(AtomicInteger等无锁线程安全类)三种。<br>底层就实现是volatile和CAS。整个并发包其实都是由这两种思想构成的。</p>
+</blockquote>
+<p></p><h4>JDK8新特性</h4><p></p>
+<blockquote>
+<p> <strong>Lambda 表达式</strong> − Lambda允许把函数作为一个方法的参数（函数作为参数传递进方法中)。<br>    <strong>方法引用</strong> − 方法引用提供了非常有用的语法，可以直接引用已有Java类或对象（实例）的方法或构造器。与lambda联合使用，方法引用可以使语言的构造更紧凑简洁，减少冗余代码。<br>    <strong>默认方法</strong> − 默认方法就是一个在接口里面有了一个实现的方法。新增了default方法和static方法，这两种方法可以有方法体<br>    <strong>新工具 − 新的编译工具</strong>，如：Nashorn引擎 jjs、 类依赖分析器jdeps。<br>    <strong>Stream API</strong> −新添加的Stream API（java.util.stream） 把真正的函数式编程风格引入到Java中。<br>    <strong>Date Time API</strong> − 加强对日期与时间的处理。<br>    <strong>Optional 类</strong> − Optional 类已经成为 Java 8 类库的一部分，用来解决空指针异常。<br>    <strong>Nashorn, JavaScript 引擎</strong> − Java 8提供了一个新的Nashorn javascript引擎，它允许我们在JVM上运行特定的javascript应用。</p>
+</blockquote>
+<p></p><h4>UDP、TCP区别</h4><p></p>
+<blockquote>
+<p>TCP是建立可靠连接，并且通信双方都可以以流的形式发送数据。相对TCP，UDP则是面向无连接的协议。<br>使用UDP协议时，不需要建立连接，只需要知道对方的IP地址和端口号，就可以直接发数据包。但是，能不能到达就不知道了。<br>虽然用UDP传输数据不可靠，但它的优点是和TCP比，速度快，对于不要求可靠到达的数据，就可以使用UDP协议。</p>
+</blockquote>
+
+            
+        </div>
+        
+    </div>
+    
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2018/06/08/java-interview-1/">java常见面试题【1】</a></p>
+        <p><span>文章作者:</span><a href="/" title="回到主页">Java Ming</a></p>
+        <p><span>发布时间:</span>2018-06-08, 17:30:00</p>
+        <p><span>最后更新:</span>2018-06-08, 20:16:25</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2018/06/08/java-interview-1/" title="java常见面试题【1】">https://java2ming.github.io/2018/06/08/java-interview-1/</a>
+            <span class="copy-path" data-clipboard-text="原文: https://java2ming.github.io/2018/06/08/java-interview-1/　　作者: Java Ming" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+    <nav id="article-nav">
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/0201/02/12/about-pjax/">
+                    pjax: 当ajax遇上pushState
+                </a>
+            </div>
+        
+    </nav>
+
+    
+    <script>
+
+        function getPgjs() {
+            var agent = navigator.userAgent.toLowerCase();
+            var res = agent.match(/android/);
+            if (res == "android")
+                return res;
+            res = agent.match(/iphone/);
+            if (res == "iphone")
+                return "ios";
+            res = agent.match(/ipad/);
+            if (res == "ipad")
+                return "ios";
+            res = agent.match(/windows/);
+            if (res == "windows")
+                return "wp";
+            return "pc";
+        }
+
+        function loadImage(id) {
+            var page = window.location.pathname
+            if (page.indexOf("about") !== -1) {
+                return;
+            }
+//            var result = getPgjs();
+//            if(result=="wp"){
+//                $(".fengmian").hide();
+//                console.log(result);
+//                return;
+//            }
+            var backgroundnum = 60;
+            var randomIndex = Math.ceil(Math.random() * backgroundnum);
+            var result = randomIndex + "?version=" + (new Date() / 1000);
+            var backgroundimg = "https://raw.githubusercontent.com/java2ming/image/master/background/bg-number.jpg".replace(/number/gi, randomIndex);
+            var key = "#" + id;
+            $(key).attr("src", backgroundimg);
+            $(".fengmian").show();
+        }
+
+        (function () {
+            var page = window.location.pathname
+            if (page.indexOf("about") !== -1) {
+                console.log(page)
+                $(".fenagmian").hide();
+//                $("#comments").remove();
+            }
+        })()
+    </script>
+</article>
+<!-- 代码1：放在页面需要展示的位置  -->
+<!-- 如果您配置过sourceid，建议在div标签中配置sourceid、cid(分类id)，没有请忽略  -->
+<!--<div id="cyReward" role="cylabs" data-use="reward" style="margin-left: 45%" ></div>-->
+<!--<div id="cyEmoji" role="cylabs" data-use="emoji"></div>-->
+
+
+<!--<script>-->
+<!--(function(){-->
+<!--var path = window.location.pathname;-->
+<!--if (path ==="/" || path=== undefined || path === null || path.indexOf("page") !== -1){-->
+<!--$("#cyReward").remove();-->
+<!--$("#cyEmoji").remove();-->
+<!--}-->
+<!--})()-->
+
+
+<!--</script>-->
+
+<!-- 代码2：用来读取评论框配置，此代码需放置在代码1之后。 -->
+<!-- 如果当前页面有评论框，代码2请勿放置在评论框代码之前。 -->
+<!-- 如果页面同时使用多个实验室项目，以下代码只需要引入一次，只配置上面的div标签即可 -->
+<!--<script type="text/javascript" charset="utf-8" src="https://changyan.sohu.com/js/changyan.labs.https.js?appid=cysUkgluO"></script>-->
+
+<div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-number">1.</span> <span class="toc-text"> ArrayList的默认长度</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-number">2.</span> <span class="toc-text"> Lock与synchronized 的区别</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-number">3.</span> <span class="toc-text">mysql索引类型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-number">4.</span> <span class="toc-text">事务特性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-number">5.</span> <span class="toc-text">事务的隔离级别</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-number">6.</span> <span class="toc-text">spring事务传播特性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-number">7.</span> <span class="toc-text">SQL数据库中的范式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-number">8.</span> <span class="toc-text">JDK并发包 java.util.concurrent</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-number">9.</span> <span class="toc-text">JDK8新特性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-number">10.</span> <span class="toc-text">UDP、TCP区别</span></a></li></ol>
+</div>
+<style>
+    .left-col .switch-btn,
+    .left-col .switch-area {
+        display: none;
+    }
+</style>
+
+<input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+<script>
+    yiliaConfig.toc = ["隐藏目录", "显示目录", !!"false"];
+</script>
+
+
+
+<div class="share">
+    
+
+    
+</div>
+
+
+
+
+
+
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+  <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<a href="javascript:window.open('http://twitter.com/home?status='+encodeURIComponent(document.location.href)+' '+encodeURIComponent(document.title),'_blank','toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=600, height=450,top=100,left=350');void(0)" >twitter分享</a>
+<div id="gitalk-container"></div>
+<script type="text/javascript">
+    var gitalk = new Gitalk({
+        clientID: '05c20db944af59b4e9b2',
+        clientSecret: '0813d17d5fd12c97ee6c989213095b284e2dda38',
+        id: window.location.pathname,
+        repo: 'java2ming.github.io',
+        owner: 'java2ming',
+        admin: 'java2ming',
+        distractionFreeMode: false
+    })
+    gitalk.render('gitalk-container')
+</script>
+
+
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+        
+
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/0201/02/12/about-pjax/" title="下一篇: pjax: 当ajax遇上pushState">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2018/06/08/java-interview-1/">java常见面试题【1】</a></li><li class="post-list-item"><a class="post-list-link" href="/0201/02/12/about-pjax/">pjax: 当ajax遇上pushState</a></li></ul>
+
+
+
+<script>
+    
+</script>
+
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                <i class="fa fa-copyright"></i>
+                
+                2017-
+                
+                2018 Java Ming
+                <a href="http://www.miibeian.gov.cn/" target="_blank">浙ICP备15009606号</a>
+            </div>
+            <div class="footer-right">
+                <a href="https://javaming.com/" target="_blank" title="欢迎来到小莫的博客">Blog </a> Created by <a
+                        href="https://github.com/java2ming" target="_blank" rel="external nofollow"
+                        title="希望这里的文章对你有所帮助  v3.0">javaming</a>
+                <a><i class="fa fa-heart animated infinite pulse"></i></a>
+            </div>
+        </div>
+        
+        <div class="visit">
+            
+            <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit">总访问数:
+                            <span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+            
+            <span style="color: grey;">(<a href="https://github.com/java2ming/image" rel="external nofollow" target="_blank">背景随机加载-资源存储于GitHub</a>) | 本站己运行<span
+                        id="day_count">66</span>天<span id="time_now">1</span></span>
+        </div>
+        
+    </div>
+    <script src="/js/activate-power-mode.js" ></script>
+</footer>
+<script>
+    // 添加输入效果
+    POWERMODE.colorful = true; // make power mode colorful
+    POWERMODE.shake = false; // turn off shake
+    document.body.addEventListener('input', POWERMODE);
+
+    (function () {
+        function current() {
+            var d = new Date(), str = '';
+            str += d.getHours() + '小时';
+            str += d.getMinutes() + '分';
+            str += d.getSeconds() + '秒';
+            return str;
+        }
+
+        setInterval(function () {
+            $("#time_now").html(current)
+        }, 1000);
+
+        var dateFrom = new Date(2017, 5, 13);
+        var dateTo = new Date();
+        var diff = dateTo.valueOf() - dateFrom.valueOf();
+        var diff_day = parseInt(diff / (1000 * 60 * 60 * 24));
+        $("#day_count").html(diff_day);
+    })();
+</script>
+<a href="https://github.com/java2ming"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/a6677b08c955af8400f44c6298f40e7d19cc5b2d/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677261795f3664366436642e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png"></a>
+    </div>
+    
+    <script src="/js/GithubRepoWidget.js"></script>
+
+<script data-main="/js/main.js" src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var iPad = window.navigator.userAgent.indexOf('iPad');
+            if (iPad > -1 || $(".left-col").css("display") === "none") {
+                var bgColorList = ["#9db3f4", "#414141", "#e5a859", "#f5dfc6", "#c084a0", "#847e72", "#cd8390", "#996731"];
+                var bgColor = Math.ceil(Math.random() * (bgColorList.length - 1));
+                $("body").css({"background-color": bgColorList[bgColor], "background-size": "cover"});
+            }
+            else {
+                var backgroundnum = 60;
+                var randomIndex = Math.ceil(Math.random() * backgroundnum);
+                var result = randomIndex+".jpg?version="+(new Date()/1000);
+                var backgroundimg = "url(https://raw.githubusercontent.com/java2ming/image/master/background/bg-number.jpg)".replace(/number/gi,result);
+//                console.info("加载图片"+backgroundimg);
+                $("body").css({"background": backgroundimg, "background-attachment": "fixed", "background-size": "cover"});
+            }
+        })
+    </script>
+
+
+
+
+    <script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script src="//cdn.bootcss.com/mathjax/2.6.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+<div class="scroll" id="scroll">
+    <a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" onclick="load$hide();" title="查看评论"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+  </div>
+</body>
+</html>
