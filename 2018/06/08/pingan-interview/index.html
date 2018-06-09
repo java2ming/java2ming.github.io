@@ -27,7 +27,7 @@
 <meta property="og:description" content="在平安面试了 整理下平安的面试题">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="https://raw.githubusercontent.com/java2ming/image/master/java/jvm/1.gif">
-<meta property="og:updated_time" content="2018-06-09T10:14:42.773Z">
+<meta property="og:updated_time" content="2018-06-09T10:48:48.931Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="平安面试题">
 <meta name="twitter:description" content="在平安面试了 整理下平安的面试题">
@@ -340,17 +340,16 @@
 <p>在平安面试了 整理下平安的面试题</p>
 </blockquote>
 <a id="more"></a>
-<p></p><h4>平安面试题 第一轮 </h4><p></p>
-<h4 id="1-自我介绍"><a href="#1-自我介绍" class="headerlink" title="1.自我介绍"></a>1.自我介绍</h4><blockquote>
+<h4 id="自我介绍"><a href="#自我介绍" class="headerlink" title="自我介绍"></a>自我介绍</h4><blockquote>
 <p> 面试必备题目哈！还是提前组织下语言哦</p>
 </blockquote>
-<h4 id="2-电话号码的正则表达式"><a href="#2-电话号码的正则表达式" class="headerlink" title="2.电话号码的正则表达式"></a>2.电话号码的正则表达式</h4><blockquote>
+<h4 id="电话号码的正则表达式"><a href="#电话号码的正则表达式" class="headerlink" title="电话号码的正则表达式"></a>电话号码的正则表达式</h4><blockquote>
 <p>^((13[0-9])|(14[5|7])|(15([0-3]|[5-9]))|(18[0,5-9]))\d{8}$</p>
 </blockquote>
-<h4 id="3-nginx的实现原理"><a href="#3-nginx的实现原理" class="headerlink" title="3.nginx的实现原理"></a>3.nginx的实现原理</h4><blockquote>
+<h4 id="nginx的实现原理"><a href="#nginx的实现原理" class="headerlink" title="nginx的实现原理"></a>nginx的实现原理</h4><blockquote>
 <p>nginx使用的是异步非阻塞的方式，Apache采用每个进程负责一个会话的方式，当这个会话关闭后这个进程才会被释放。而Nginx是每个请求由worker进程负责，在需要等待后端服务器返回数据的时候，worker会注册一个事件，当请求返回后通知到我，我接着干，然后他就会等待处理新的请求</p>
 </blockquote>
-<h4 id="4-Spring的IOC、AOP"><a href="#4-Spring的IOC、AOP" class="headerlink" title="4.Spring的IOC、AOP"></a>4.Spring的IOC、AOP</h4><blockquote>
+<h4 id="Spring的IOC、AOP"><a href="#Spring的IOC、AOP" class="headerlink" title="Spring的IOC、AOP"></a>Spring的IOC、AOP</h4><blockquote>
 <ul>
 <li><strong>IOC</strong> : 依赖注入、控制反转。<br>平常开发中，通常是new一个依赖类再调用类实例的方法，而这种new出来的实例不好统一管理。Spring的依赖注入就是由Spring容器帮助我们初始化实例并注入到需要的类中</li>
 </ul>
@@ -361,10 +360,10 @@
 <li><strong>AOP</strong> : 面向切面编程<br>将多个类的公共行为封装到一个可重用的模块，减少系统的重复代码，降低模块之间的耦合度。比如权限的验证，日志的记录都会使用到AOP</li>
 </ul>
 </blockquote>
-<h4 id="5-JVM的工作原理"><a href="#5-JVM的工作原理" class="headerlink" title="5.JVM的工作原理"></a>5.JVM的工作原理</h4><blockquote>
+<h4 id="JVM的工作原理"><a href="#JVM的工作原理" class="headerlink" title="JVM的工作原理"></a>JVM的工作原理</h4><blockquote>
 <p>Java是一种技术，它由四方面组成：Java编程语言、Java类文件格式、Java虚拟机和Java应用程序接口(Java API)。它们的关系如下图所示：<br><img src="https://raw.githubusercontent.com/java2ming/image/master/java/jvm/1.gif" alt="enter image description here"></p>
 </blockquote>
-<h4 id="6-SpringCloud实现负载均衡的组件"><a href="#6-SpringCloud实现负载均衡的组件" class="headerlink" title="6.SpringCloud实现负载均衡的组件"></a>6.SpringCloud实现负载均衡的组件</h4><blockquote>
+<h4 id="SpringCloud实现负载均衡的组件"><a href="#SpringCloud实现负载均衡的组件" class="headerlink" title="SpringCloud实现负载均衡的组件"></a>SpringCloud实现负载均衡的组件</h4><blockquote>
 <p><strong>Spring Cloud各组件总结归纳</strong><br><strong>润物无声，融合在每个微服务中、依赖其它组件并为其提供服务。</strong></p>
 <ul>
 <li><strong>Ribbon</strong>，客户端负载均衡，特性有区域亲和、重试机制。</li>
@@ -405,18 +404,18 @@
 <li>之所以特殊是因为从jar包和包名来看它不属于Spring Cloud的一员，但是它与Spring Cloud Sleuth的抽样日志结合的天衣无缝。乍一看它与Hystrix的Dashboard作用有重叠的部分，但是他们的侧重点完全不同。Dashboard侧重的是单个服务的统计和是否可用，Zipkin侧重的监控环节时长。简言之，Dashboard侧重故障诊断，Ziokin侧重性能优化。</li>
 </ol>
 </blockquote>
-<h4 id="7-了解过微服务框架吗"><a href="#7-了解过微服务框架吗" class="headerlink" title="7.了解过微服务框架吗"></a>7.了解过微服务框架吗</h4><blockquote>
+<h4 id="了解过微服务框架吗"><a href="#了解过微服务框架吗" class="headerlink" title="了解过微服务框架吗"></a>了解过微服务框架吗</h4><blockquote>
 <p><a href="https://docs.spring.io/spring-boot/docs/1.5.6.RELEASE/reference/htmlsingle/" target="_blank" rel="noopener">SpringBoot官方文档</a><br><a href="https://springcloud.cc/spring-cloud-brixton.html" target="_blank" rel="noopener">SpringCloud中文社区</a></p>
 </blockquote>
-<h4 id="8-StringBuffer、StringBuliuder的区别"><a href="#8-StringBuffer、StringBuliuder的区别" class="headerlink" title="8.StringBuffer、StringBuliuder的区别"></a>8.StringBuffer、StringBuliuder的区别</h4><blockquote>
+<h4 id="StringBuffer、StringBuliuder的区别"><a href="#StringBuffer、StringBuliuder的区别" class="headerlink" title="StringBuffer、StringBuliuder的区别"></a>StringBuffer、StringBuliuder的区别</h4><blockquote>
 <p>StringBuilder:是 Java 5 中引入的，它和 StringBuffer 的方法完全相同，区别在于它是在单线程环境下使用的， 因为它的所有方面都没有被 synchronized 修饰，因此它的效率也比 StringBuffer  要高</p>
 </blockquote>
-<h4 id="9-Java中有多少种排序算法，说说自己熟悉的算法"><a href="#9-Java中有多少种排序算法，说说自己熟悉的算法" class="headerlink" title="9.Java中有多少种排序算法，说说自己熟悉的算法"></a>9.Java中有多少种排序算法，说说自己熟悉的算法</h4><p><a href="http://www.runoob.com/w3cnote/sort-algorithm-summary.html" target="_blank" rel="noopener">排序算法总结–菜鸟教程</a></p>
-<h4 id="10-常用的设计模式"><a href="#10-常用的设计模式" class="headerlink" title="10.常用的设计模式"></a>10.常用的设计模式</h4><p><a href="http://www.runoob.com/design-pattern/design-pattern-tutorial.html" target="_blank" rel="noopener">设计模式–菜鸟教程</a></p>
-<h4 id="11-为什么不使用select"><a href="#11-为什么不使用select" class="headerlink" title="11.为什么不使用select *"></a>11.为什么不使用select *</h4><blockquote>
+<h4 id="Java中有多少种排序算法，说说自己熟悉的算法"><a href="#Java中有多少种排序算法，说说自己熟悉的算法" class="headerlink" title="Java中有多少种排序算法，说说自己熟悉的算法"></a>Java中有多少种排序算法，说说自己熟悉的算法</h4><p><a href="http://www.runoob.com/w3cnote/sort-algorithm-summary.html" target="_blank" rel="noopener">排序算法总结–菜鸟教程</a></p>
+<h4 id="常用的设计模式"><a href="#常用的设计模式" class="headerlink" title="常用的设计模式"></a>常用的设计模式</h4><p><a href="http://www.runoob.com/design-pattern/design-pattern-tutorial.html" target="_blank" rel="noopener">设计模式–菜鸟教程</a></p>
+<h4 id="为什么不使用select"><a href="#为什么不使用select" class="headerlink" title="为什么不使用select *"></a>为什么不使用select *</h4><blockquote>
 <p>其实走不走索引，关键取决于where后面包括还是不包括创建聚集索引的时候的第一个字段<br>或者创建非聚集索引的时候的第一个字段；跟select <em>没有关系的，select </em> 最大的影响就是额外的IO开销</p>
 </blockquote>
-<h4 id="12-了解过Redis的实现原理吗"><a href="#12-了解过Redis的实现原理吗" class="headerlink" title="12.了解过Redis的实现原理吗"></a>12.了解过Redis的实现原理吗</h4><blockquote>
+<h4 id="了解过Redis的实现原理吗"><a href="#了解过Redis的实现原理吗" class="headerlink" title="了解过Redis的实现原理吗"></a>了解过Redis的实现原理吗</h4><blockquote>
 <p>Redis 为了达到最快的读写速度将数据都读到内存中，并通过异步的方式将数据写入磁盘。所以 redis 具有快速和 数据持久化的特征。如果不将数据放在内存中，磁盘 I/O 速度为严重影响 redis 的性能</p>
 <p></p><h5>Redis数据结构： 五种 </h5><br>String——字符串<br>Hash——字典<br>List——列表<br>Set——集合<br>Sorted Set——有序集合<p></p>
 </blockquote>
@@ -431,7 +430,7 @@
         <p><span>本文标题:</span><a href="/2018/06/08/pingan-interview/">平安面试题</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">Java Ming</a></p>
         <p><span>发布时间:</span>2018-06-08, 20:43:00</p>
-        <p><span>最后更新:</span>2018-06-09, 18:14:42</p>
+        <p><span>最后更新:</span>2018-06-09, 18:48:48</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2018/06/08/pingan-interview/" title="平安面试题">https://java2ming.github.io/2018/06/08/pingan-interview/</a>
             <span class="copy-path" data-clipboard-text="原文: https://java2ming.github.io/2018/06/08/pingan-interview/　　作者: Java Ming" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
@@ -536,7 +535,7 @@
 
 <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-number">1.</span> <span class="toc-text">平安面试题 第一轮 </span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-自我介绍"><span class="toc-number">2.</span> <span class="toc-text">1.自我介绍</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-电话号码的正则表达式"><span class="toc-number">3.</span> <span class="toc-text">2.电话号码的正则表达式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-nginx的实现原理"><span class="toc-number">4.</span> <span class="toc-text">3.nginx的实现原理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-Spring的IOC、AOP"><span class="toc-number">5.</span> <span class="toc-text">4.Spring的IOC、AOP</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-JVM的工作原理"><span class="toc-number">6.</span> <span class="toc-text">5.JVM的工作原理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-SpringCloud实现负载均衡的组件"><span class="toc-number">7.</span> <span class="toc-text">6.SpringCloud实现负载均衡的组件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-了解过微服务框架吗"><span class="toc-number">8.</span> <span class="toc-text">7.了解过微服务框架吗</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#8-StringBuffer、StringBuliuder的区别"><span class="toc-number">9.</span> <span class="toc-text">8.StringBuffer、StringBuliuder的区别</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#9-Java中有多少种排序算法，说说自己熟悉的算法"><span class="toc-number">10.</span> <span class="toc-text">9.Java中有多少种排序算法，说说自己熟悉的算法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#10-常用的设计模式"><span class="toc-number">11.</span> <span class="toc-text">10.常用的设计模式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#11-为什么不使用select"><span class="toc-number">12.</span> <span class="toc-text">11.为什么不使用select *</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#12-了解过Redis的实现原理吗"><span class="toc-number">13.</span> <span class="toc-text">12.了解过Redis的实现原理吗</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#undefined"><span class="toc-number">13.1.</span> <span class="toc-text">Redis数据结构： 五种 </span></a></li></ol></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#自我介绍"><span class="toc-number">1.</span> <span class="toc-text">自我介绍</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#电话号码的正则表达式"><span class="toc-number">2.</span> <span class="toc-text">电话号码的正则表达式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#nginx的实现原理"><span class="toc-number">3.</span> <span class="toc-text">nginx的实现原理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Spring的IOC、AOP"><span class="toc-number">4.</span> <span class="toc-text">Spring的IOC、AOP</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#JVM的工作原理"><span class="toc-number">5.</span> <span class="toc-text">JVM的工作原理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#SpringCloud实现负载均衡的组件"><span class="toc-number">6.</span> <span class="toc-text">SpringCloud实现负载均衡的组件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#了解过微服务框架吗"><span class="toc-number">7.</span> <span class="toc-text">了解过微服务框架吗</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#StringBuffer、StringBuliuder的区别"><span class="toc-number">8.</span> <span class="toc-text">StringBuffer、StringBuliuder的区别</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Java中有多少种排序算法，说说自己熟悉的算法"><span class="toc-number">9.</span> <span class="toc-text">Java中有多少种排序算法，说说自己熟悉的算法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#常用的设计模式"><span class="toc-number">10.</span> <span class="toc-text">常用的设计模式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#为什么不使用select"><span class="toc-number">11.</span> <span class="toc-text">为什么不使用select *</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#了解过Redis的实现原理吗"><span class="toc-number">12.</span> <span class="toc-text">了解过Redis的实现原理吗</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#undefined"><span class="toc-number">12.1.</span> <span class="toc-text">Redis数据结构： 五种 </span></a></li></ol></li></ol>
 </div>
 <style>
     .left-col .switch-btn,
