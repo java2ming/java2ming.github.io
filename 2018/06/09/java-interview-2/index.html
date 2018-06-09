@@ -18,20 +18,18 @@
 <meta name="keywords" content="">
 
 
-<meta name="description" content="在平安面试了 整理下平安的面试题">
-<meta name="keywords" content="java,面试题,平安">
+<meta name="description" content="java常见面试题 第二波">
+<meta name="keywords" content="java,面试题">
 <meta property="og:type" content="article">
-<meta property="og:title" content="平安面试题">
-<meta property="og:url" content="https://java2ming.github.io/2018/06/08/pingan-interview/index.html">
+<meta property="og:title" content="java常见面试题【2】">
+<meta property="og:url" content="https://java2ming.github.io/2018/06/09/java-interview-2/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="在平安面试了 整理下平安的面试题">
+<meta property="og:description" content="java常见面试题 第二波">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="https://raw.githubusercontent.com/java2ming/image/master/java/jvm/1.gif">
-<meta property="og:updated_time" content="2018-06-09T10:14:42.773Z">
+<meta property="og:updated_time" content="2018-06-09T10:13:16.717Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="平安面试题">
-<meta name="twitter:description" content="在平安面试了 整理下平安的面试题">
-<meta name="twitter:image" content="https://raw.githubusercontent.com/java2ming/image/master/java/jvm/1.gif">
+<meta name="twitter:title" content="java常见面试题【2】">
+<meta name="twitter:description" content="java常见面试题 第二波">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -63,7 +61,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>平安面试题 | Hexo</title>
+<title>java常见面试题【2】 | Hexo</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -287,11 +285,11 @@
 </style>
 
 
-<article id="post-pingan-interview" class="article article-type-post" itemscope itemprop="blogPost">
+<article id="post-java-interview-2" class="article article-type-post" itemscope itemprop="blogPost">
     
     <div class="article-meta">
-        <a href="/2018/06/08/pingan-interview/" class="article-date">
-      <time datetime="2018-06-08T12:43:00.000Z" itemprop="datePublished">2018-06-08</time>
+        <a href="/2018/06/09/java-interview-2/" class="article-date">
+      <time datetime="2018-06-09T10:13:00.000Z" itemprop="datePublished">2018-06-09</time>
 </a>
     </div>
     
@@ -300,14 +298,14 @@
         <input type="hidden" class="isFancy"/>
         
         <div class="fengmian">
-            <img class="fengmian-image" id="pingan-interview" src="https://raw.githubusercontent.com/java2ming/image/master/cover/bg-60.jpg" alt="封面" onload="loadImage(this.id)"/>
+            <img class="fengmian-image" id="java-interview-2" src="https://raw.githubusercontent.com/java2ming/image/master/cover/bg-60.jpg" alt="封面" onload="loadImage(this.id)"/>
         </div>
         
         <header class="article-header">
             
   
     <h1 class="article-title" itemprop="name">
-      平安面试题
+      java常见面试题【2】
     </h1>
   
 
@@ -318,7 +316,7 @@
 
             
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/平安/">平安</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/面试题/">面试题</a></li></ul> </div>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/面试题/">面试题</a></li></ul> </div>
 
 
 
@@ -337,88 +335,107 @@
             
             
             <blockquote>
-<p>在平安面试了 整理下平安的面试题</p>
+<p>java常见面试题 第二波</p>
 </blockquote>
 <a id="more"></a>
-<p></p><h4>平安面试题 第一轮 </h4><p></p>
-<h4 id="1-自我介绍"><a href="#1-自我介绍" class="headerlink" title="1.自我介绍"></a>1.自我介绍</h4><blockquote>
-<p> 面试必备题目哈！还是提前组织下语言哦</p>
+<h4>Java常见面试题【2】</h4>
+
+<h4 id="深入研究java-lang-ThreadLocal类"><a href="#深入研究java-lang-ThreadLocal类" class="headerlink" title="深入研究java.lang.ThreadLocal类"></a>深入研究java.lang.ThreadLocal类</h4><blockquote>
+<p>Synchronized实现内存共享，ThreadLocal为每个线程维护一个本地变量。<br>采用空间换时间，它用于线程间的数据隔离，为每一个使用该变量的线程提供一个副本，每个线程都可以独立地改变自己的副本，而不会和其他线程的副本冲突。<br>ThreadLocal类中维护一个Map，用于存储每一个线程的变量副本，Map中元素的键为线程对象，而值为对应线程的变量副本。<br>ThreadLocal在Spring中发挥着巨大的作用，在管理Request作用域中的Bean、事务管理、任务调度、AOP等模块都出现了它的身影。<br>Spring中绝大部分Bean都可以声明成Singleton作用域，采用ThreadLocal进行封装，因此有状态的Bean就能够以singleton的方式在多线程中正常工作了。</p>
 </blockquote>
-<h4 id="2-电话号码的正则表达式"><a href="#2-电话号码的正则表达式" class="headerlink" title="2.电话号码的正则表达式"></a>2.电话号码的正则表达式</h4><blockquote>
-<p>^((13[0-9])|(14[5|7])|(15([0-3]|[5-9]))|(18[0,5-9]))\d{8}$</p>
-</blockquote>
-<h4 id="3-nginx的实现原理"><a href="#3-nginx的实现原理" class="headerlink" title="3.nginx的实现原理"></a>3.nginx的实现原理</h4><blockquote>
-<p>nginx使用的是异步非阻塞的方式，Apache采用每个进程负责一个会话的方式，当这个会话关闭后这个进程才会被释放。而Nginx是每个请求由worker进程负责，在需要等待后端服务器返回数据的时候，worker会注册一个事件，当请求返回后通知到我，我接着干，然后他就会等待处理新的请求</p>
-</blockquote>
-<h4 id="4-Spring的IOC、AOP"><a href="#4-Spring的IOC、AOP" class="headerlink" title="4.Spring的IOC、AOP"></a>4.Spring的IOC、AOP</h4><blockquote>
-<ul>
-<li><strong>IOC</strong> : 依赖注入、控制反转。<br>平常开发中，通常是new一个依赖类再调用类实例的方法，而这种new出来的实例不好统一管理。Spring的依赖注入就是由Spring容器帮助我们初始化实例并注入到需要的类中</li>
-</ul>
-</blockquote>
-<p> <strong>IOC实现方式</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">1. Set注入</span><br><span class="line">2. 构造器注入</span><br><span class="line">3. 静态工厂的方法注入</span><br><span class="line">4. 实例工厂的方法注入</span><br></pre></td></tr></table></figure></p>
-<blockquote>
-<ul>
-<li><strong>AOP</strong> : 面向切面编程<br>将多个类的公共行为封装到一个可重用的模块，减少系统的重复代码，降低模块之间的耦合度。比如权限的验证，日志的记录都会使用到AOP</li>
-</ul>
-</blockquote>
-<h4 id="5-JVM的工作原理"><a href="#5-JVM的工作原理" class="headerlink" title="5.JVM的工作原理"></a>5.JVM的工作原理</h4><blockquote>
-<p>Java是一种技术，它由四方面组成：Java编程语言、Java类文件格式、Java虚拟机和Java应用程序接口(Java API)。它们的关系如下图所示：<br><img src="https://raw.githubusercontent.com/java2ming/image/master/java/jvm/1.gif" alt="enter image description here"></p>
-</blockquote>
-<h4 id="6-SpringCloud实现负载均衡的组件"><a href="#6-SpringCloud实现负载均衡的组件" class="headerlink" title="6.SpringCloud实现负载均衡的组件"></a>6.SpringCloud实现负载均衡的组件</h4><blockquote>
-<p><strong>Spring Cloud各组件总结归纳</strong><br><strong>润物无声，融合在每个微服务中、依赖其它组件并为其提供服务。</strong></p>
-<ul>
-<li><strong>Ribbon</strong>，客户端负载均衡，特性有区域亲和、重试机制。</li>
-<li><strong>Hystrix</strong>，客户端容错保护，特性有服务降级、服务熔断、请求缓存、请求合并、依赖隔离。</li>
-<li><strong>Feign</strong>，声明式服务调用，本质上就是Ribbon+Hystrix。</li>
-<li><strong>Bus</strong>，消息总线，配合Config仓库修改的一种Stream实现，</li>
-<li><strong>Sleuth</strong>，分布式服务追踪，需要搞清楚TraceID和SpanID以及抽样，如何与ELK整合。</li>
-<li><strong>Stream</strong>，消息驱动，有Sink、Source、Processor三种通道，特性有订阅发布、消费组、消息分区。</li>
-</ul>
-</blockquote>
-<blockquote>
-<p><strong>独挑大梁，独自启动不需要依赖其它组件。</strong></p>
+<h4 id="Java内存模型"><a href="#Java内存模型" class="headerlink" title="Java内存模型"></a>Java内存模型</h4><blockquote>
+<p>Java虚拟机规范中将Java运行时数据分为六种。</p>
 <ol>
-<li><strong>Eureka</strong>，服务注册中心，特性有失效剔除、服务保护。</li>
-<li><strong>Dashboard</strong>，Hystrix仪表盘，监控集群模式和单点模式，其中集群模式需要收集器Turbine配合。</li>
-<li><strong>Zuul</strong>，API服务网关，功能有路由分发和过滤。</li>
-<li><strong>Config</strong>，分布式配置中心，支持本地仓库、SVN、Git、Jar包内配置等模式，</li>
+<li>程序计数器：是一个数据结构，用于保存当前正常执行的程序的内存地址。Java虚拟机的多线程就是通过线程轮流切换并分配处理器时间来实现的，为了线程切换后能恢复到正确的位置，每条线程都需要一个独立的程序计数器，互不影响，该区域为“线程私有”。</li>
+<li>Java虚拟机栈：线程私有的，与线程生命周期相同，用于存储局部变量表，操作栈，方法返回值。局部变量表放着基本数据类型，还有对象的引用。</li>
+<li>本地方法栈：跟虚拟机栈很像，不过它是为虚拟机使用到的Native方法服务。</li>
+<li>Java堆：所有线程共享的一块内存区域，对象实例几乎都在这分配内存。</li>
+<li>方法区：各个线程共享的区域，储存虚拟机加载的类信息，常量，静态变量，编译后的代码。</li>
+<li>运行时常量池：代表运行时每个class文件中的常量表。包括几种常量：编译时的数字常量、方法或者域的引用。</li>
+</ol>
+</blockquote>
+<h4 id="java-GC是在什么时候，对什么东西，做了什么事情"><a href="#java-GC是在什么时候，对什么东西，做了什么事情" class="headerlink" title="java GC是在什么时候，对什么东西，做了什么事情"></a>java GC是在什么时候，对什么东西，做了什么事情</h4><blockquote>
+<p><strong>在什么时候</strong>：</p>
+<ol>
+<li>新生代有一个Eden区和两个survivor区，首先将对象放入Eden区，如果空间不足就向其中的一个survivor区上放，如果仍然放不下就会引发一次发生在新生代的minor GC，将存活的对象放入另一个survivor区中，然后清空Eden和之前的那个survivor区的内存。在某次GC过程中，如果发现仍然又放不下的对象，就将这些对象放入老年代内存里去。</li>
+<li>大对象以及长期存活的对象直接进入老年区。</li>
+<li>当每次执行minor GC的时候应该对要晋升到老年代的对象进行分析，如果这些马上要到老年区的老年对象的大小超过了老年区的剩余大小，那么执行一次Full GC以尽可能地获得老年区的空间。  </li>
 </ol>
 </blockquote>
 <blockquote>
-<p><strong>每个组件都不是平白无故的产生的，是为了解决某一特定的问题而存在。</strong></p>
+<p><strong>对什么东西</strong>：<br>从GC Roots搜索不到，而且经过一次标记清理之后仍没有复活的对象。</p>
+</blockquote>
+<blockquote>
+<p><strong>做什么</strong>：<br>新生代：复制清理；<br>老年代：标记-清除和标记-压缩算法；<br>永久代：存放Java中的类和加载类的类加载器本身。</p>
+</blockquote>
+<blockquote>
+<p><strong>GC Roots都有哪些</strong>： </p>
 <ol>
-<li>Eureka和Ribbon，是最基础的组件，一个注册服务，一个消费服务。</li>
-<li>Hystrix为了优化Ribbon、防止整个微服务架构因为某个服务节点的问题导致崩溃，是个保险丝的作用。</li>
-<li>Dashboard给Hystrix统计和展示用的，而且监控服务节点的整体压力和健康情况。</li>
-<li>Turbine是集群收集器，服务于Dashboard的。</li>
-<li>Feign是方便我们程序员些更优美的代码的。</li>
-<li>Zuul是加在整个微服务最前沿的防火墙和代理器，隐藏微服务结点IP端口信息，加强安全保护的。</li>
-<li>Config是为了解决所有微服务各自维护各自的配置，设置一个同意的配置中心，方便修改配置的。</li>
-<li>Bus是因为config修改完配置后各个结点都要refresh才能生效实在太麻烦，所以交给bus来通知服务节点刷新配置的。</li>
-<li>Stream是为了简化研发人员对MQ使用的复杂度，弱化MQ的差异性，达到程序和MQ松耦合。</li>
-<li>Sleuth是因为单次请求在微服务节点中跳转无法追溯，解决任务链日志追踪问题的。</li>
+<li>虚拟机栈中的引用的对象 </li>
+<li>方法区中静态属性引用的对象，常量引用的对象 </li>
+<li>本地方法栈中JNI（即一般说的Native方法）引用的对象。</li>
+</ol>
+</blockquote>
+<h4 id="CAS（Compare-And-Swap）-无锁算法"><a href="#CAS（Compare-And-Swap）-无锁算法" class="headerlink" title="CAS（Compare And Swap） 无锁算法"></a>CAS（Compare And Swap） 无锁算法</h4><blockquote>
+<p>CAS是乐观锁技术，当多个线程尝试使用CAS同时更新同一个变量时，只有其中一个线程能更新变量的值，而其它线程都失败，失败的线程并不会被挂起，而是被告知这次竞争中失败，并可以再次尝试。CAS有3个操作数，内存值V，旧的预期值A，要修改的新值B。当且仅当预期值A和内存值V相同时，将内存值V修改为B，否则什么都不做。</p>
+</blockquote>
+<h4 id="类加载器工作机制"><a href="#类加载器工作机制" class="headerlink" title="类加载器工作机制"></a>类加载器工作机制</h4><blockquote>
+<ol>
+<li>装载：将Java二进制代码导入jvm中，生成Class文件。 </li>
+<li>连接：a）校验：检查载入Class文件数据的正确性 b）准备：给类的静态变量分配存储空间 c）解析：将符号引用转成直接引用 </li>
+<li>初始化：对类的静态变量，静态方法和静态代码块执行初始化工作。</li>
 </ol>
 </blockquote>
 <blockquote>
-<p><strong>特殊成员Zipkin</strong></p>
+<p>双亲委派模型：类加载器收到类加载请求，首先将请求委派给父类加载器完成<br>用户自定义加载器-&gt;应用程序加载器-&gt;扩展类加载器-&gt;启动类加载器。 </p>
+</blockquote>
+<h4 id="索引：B-，B-全文索引"><a href="#索引：B-，B-全文索引" class="headerlink" title="索引：B+，B-,全文索引"></a>索引：B+，B-,全文索引</h4><blockquote>
+<p>Mysql的索引是一个数据结构，旨在使数据库高效的查找数据。<br>常用的数据结构是B+Tree，每个叶子节点不但存放了索引键的相关信息还增加了指向相邻叶子节点的指针，这样就形成了带有顺序访问指针的B+Tree，做这个优化的目的是提高不同区间访问的性能。 </p>
+</blockquote>
+<blockquote>
+<p><strong>什么时候使用索引</strong>： </p>
 <ol>
-<li>之所以特殊是因为从jar包和包名来看它不属于Spring Cloud的一员，但是它与Spring Cloud Sleuth的抽样日志结合的天衣无缝。乍一看它与Hystrix的Dashboard作用有重叠的部分，但是他们的侧重点完全不同。Dashboard侧重的是单个服务的统计和是否可用，Zipkin侧重的监控环节时长。简言之，Dashboard侧重故障诊断，Ziokin侧重性能优化。</li>
+<li>经常出现在group by,order by和distinc关键字后面的字段 </li>
+<li>经常与其他表进行连接的表，在连接字段上应该建立索引 </li>
+<li>经常出现在Where子句中的字段 </li>
+<li>经常出现用作查询选择的字段</li>
 </ol>
 </blockquote>
-<h4 id="7-了解过微服务框架吗"><a href="#7-了解过微服务框架吗" class="headerlink" title="7.了解过微服务框架吗"></a>7.了解过微服务框架吗</h4><blockquote>
-<p><a href="https://docs.spring.io/spring-boot/docs/1.5.6.RELEASE/reference/htmlsingle/" target="_blank" rel="noopener">SpringBoot官方文档</a><br><a href="https://springcloud.cc/spring-cloud-brixton.html" target="_blank" rel="noopener">SpringCloud中文社区</a></p>
+<h4 id="Spring-IOC-（控制反转，依赖注入）"><a href="#Spring-IOC-（控制反转，依赖注入）" class="headerlink" title="Spring IOC （控制反转，依赖注入）"></a>Spring IOC （控制反转，依赖注入）</h4><blockquote>
+<p>Spring支持三种依赖注入方式，分别是属性（Setter方法）注入，构造注入和接口注入。<br>在Spring中，那些组成应用的主体及由Spring IOC容器所管理的对象被称之为Bean。</p>
 </blockquote>
-<h4 id="8-StringBuffer、StringBuliuder的区别"><a href="#8-StringBuffer、StringBuliuder的区别" class="headerlink" title="8.StringBuffer、StringBuliuder的区别"></a>8.StringBuffer、StringBuliuder的区别</h4><blockquote>
-<p>StringBuilder:是 Java 5 中引入的，它和 StringBuffer 的方法完全相同，区别在于它是在单线程环境下使用的， 因为它的所有方面都没有被 synchronized 修饰，因此它的效率也比 StringBuffer  要高</p>
+<blockquote>
+<p>Spring的IOC容器通过反射的机制实例化Bean并建立Bean之间的依赖关系。<br>简单地讲，Bean就是由Spring IOC容器初始化、装配及被管理的对象。<br>获取Bean对象的过程，首先通过Resource加载配置文件并启动IOC容器，然后通过getBean方法获取bean对象，就可以调用他的方法。<br><strong>Spring Bean的作用域：</strong><br>Singleton：Spring IOC容器中只有一个共享的Bean实例，一般都是Singleton作用域。<br>Prototype：每一个请求，会产生一个新的Bean实例。<br>Request：每一次http请求会产生一个新的Bean实例。</p>
 </blockquote>
-<h4 id="9-Java中有多少种排序算法，说说自己熟悉的算法"><a href="#9-Java中有多少种排序算法，说说自己熟悉的算法" class="headerlink" title="9.Java中有多少种排序算法，说说自己熟悉的算法"></a>9.Java中有多少种排序算法，说说自己熟悉的算法</h4><p><a href="http://www.runoob.com/w3cnote/sort-algorithm-summary.html" target="_blank" rel="noopener">排序算法总结–菜鸟教程</a></p>
-<h4 id="10-常用的设计模式"><a href="#10-常用的设计模式" class="headerlink" title="10.常用的设计模式"></a>10.常用的设计模式</h4><p><a href="http://www.runoob.com/design-pattern/design-pattern-tutorial.html" target="_blank" rel="noopener">设计模式–菜鸟教程</a></p>
-<h4 id="11-为什么不使用select"><a href="#11-为什么不使用select" class="headerlink" title="11.为什么不使用select *"></a>11.为什么不使用select *</h4><blockquote>
-<p>其实走不走索引，关键取决于where后面包括还是不包括创建聚集索引的时候的第一个字段<br>或者创建非聚集索引的时候的第一个字段；跟select <em>没有关系的，select </em> 最大的影响就是额外的IO开销</p>
+<h4 id="Java代理"><a href="#Java代理" class="headerlink" title="Java代理"></a>Java代理</h4><blockquote>
+<p>代理的共有优点：业务类只需要关注业务逻辑本身，保证了业务类的重用性。 </p>
 </blockquote>
-<h4 id="12-了解过Redis的实现原理吗"><a href="#12-了解过Redis的实现原理吗" class="headerlink" title="12.了解过Redis的实现原理吗"></a>12.了解过Redis的实现原理吗</h4><blockquote>
-<p>Redis 为了达到最快的读写速度将数据都读到内存中，并通过异步的方式将数据写入磁盘。所以 redis 具有快速和 数据持久化的特征。如果不将数据放在内存中，磁盘 I/O 速度为严重影响 redis 的性能</p>
-<p></p><h5>Redis数据结构： 五种 </h5><br>String——字符串<br>Hash——字典<br>List——列表<br>Set——集合<br>Sorted Set——有序集合<p></p>
+<blockquote>
+<p><strong>Java静态代理：</strong><br>代理对象和目标对象实现了相同的接口，目标对象作为代理对象的一个属性，具体接口实现中，代理对象可以在调用目标对象相应方法前后加上其他业务处理逻辑。<br>缺点：一个代理类只能代理一个业务类。如果业务类增加方法时，相应的代理类也要增加方法。 </p>
+</blockquote>
+<blockquote>
+<p><strong>Java动态代理：</strong><br>Java动态代理是写一个类实现InvocationHandler接口，重写Invoke方法，在Invoke方法可以进行增强处理的逻辑的编写，这个公共代理类在运行的时候才能明确自己要代理的对象，同时可以实现该被代理类的方法的实现，然后在实现类方法的时候可以进行增强处理。<br>实际上：代理对象的方法 = 增强处理 + 被代理对象的方法</p>
+</blockquote>
+<blockquote>
+<p><strong>JDK和CGLIB生成动态代理类的区别：</strong><br>JDK动态代理只能针对实现了接口的类生成代理（实例化一个类）。此时代理对象和目标对象实现了相同的接口，目标对象作为代理对象的一个属性，具体接口实现中，可以在调用目标对象相应方法前后加上其他业务处理逻辑<br>CGLIB是针对类实现代理，主要是对指定的类生成一个子类（没有实例化一个类），覆盖其中的方法 。 </p>
+</blockquote>
+<blockquote>
+<p><strong>Spring AOP应用场景</strong><br>性能检测，访问控制，日志管理，事务等。<br>默认的策略是如果目标类实现接口，则使用JDK动态代理技术，如果目标对象没有实现接口，则默认会采用CGLIB代理</p>
+</blockquote>
+<h4 id="SpringMVC运行原理"><a href="#SpringMVC运行原理" class="headerlink" title="SpringMVC运行原理"></a>SpringMVC运行原理</h4><blockquote>
+<ol>
+<li>客户端请求提交到DispatcherServlet </li>
+<li>由DispatcherServlet控制器查询HandlerMapping，找到并分发到指定的Controller中。 </li>
+<li>Controller调用业务逻辑处理后，返回ModelAndView </li>
+<li>DispatcherServlet查询一个或多个ViewResoler视图解析器，找到ModelAndView指定的视图 </li>
+<li>视图负责将结果显示到客户端</li>
+</ol>
+</blockquote>
+<h4 id="Http请求"><a href="#Http请求" class="headerlink" title="Http请求"></a>Http请求</h4><blockquote>
+<p><strong>请求过程：</strong><br>DNS域名解析 –&gt; 发起TCP的三次握手 –&gt; 建立TCP连接后发起http请求 –&gt; 服务器响应http请求，浏览器得到html代码 –&gt; 浏览器解析html代码，并请求html代码中的资源（如javascript、css、图片等） –&gt; 浏览器对页面进行渲染呈现给用户</p>
+</blockquote>
+<blockquote>
+<p><strong>设计存储海量数据的存储系统</strong>：<br>设计一个叫“中间层”的一个逻辑层，在这个层，将数据库的海量数据抓出来，做成缓存，运行在服务器的内存中，同理，当有新的数据到来，也先做成缓存，再想办法，持久化到数据库中，这是一个简单的思路。主要的步骤是负载均衡，将不同用户的请求分发到不同的处理节点上，然后先存入缓存，定时向主数据库更新数据。读写的过程采用类似乐观锁的机制，可以一直读（在写数据的时候也可以），但是每次读的时候会有个版本的标记，如果本次读的版本低于缓存的版本，会重新读数据，这样的情况并不多，可以忍受。</p>
 </blockquote>
 
             
@@ -428,13 +445,13 @@
     
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2018/06/08/pingan-interview/">平安面试题</a></p>
+        <p><span>本文标题:</span><a href="/2018/06/09/java-interview-2/">java常见面试题【2】</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">Java Ming</a></p>
-        <p><span>发布时间:</span>2018-06-08, 20:43:00</p>
-        <p><span>最后更新:</span>2018-06-09, 18:14:42</p>
+        <p><span>发布时间:</span>2018-06-09, 18:13:00</p>
+        <p><span>最后更新:</span>2018-06-09, 18:13:16</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2018/06/08/pingan-interview/" title="平安面试题">https://java2ming.github.io/2018/06/08/pingan-interview/</a>
-            <span class="copy-path" data-clipboard-text="原文: https://java2ming.github.io/2018/06/08/pingan-interview/　　作者: Java Ming" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2018/06/09/java-interview-2/" title="java常见面试题【2】">https://java2ming.github.io/2018/06/09/java-interview-2/</a>
+            <span class="copy-path" data-clipboard-text="原文: https://java2ming.github.io/2018/06/09/java-interview-2/　　作者: Java Ming" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
@@ -446,16 +463,10 @@
 
     <nav id="article-nav">
         
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2018/06/09/java-interview-2/">
-                    java常见面试题【2】
-                </a>
-            </div>
-        
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2018/06/08/java-interview-1/">
-                    java常见面试题【1】
+                <a href="/2018/06/08/pingan-interview/">
+                    平安面试题
                 </a>
             </div>
         
@@ -536,7 +547,7 @@
 
 <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-number">1.</span> <span class="toc-text">平安面试题 第一轮 </span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-自我介绍"><span class="toc-number">2.</span> <span class="toc-text">1.自我介绍</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-电话号码的正则表达式"><span class="toc-number">3.</span> <span class="toc-text">2.电话号码的正则表达式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-nginx的实现原理"><span class="toc-number">4.</span> <span class="toc-text">3.nginx的实现原理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-Spring的IOC、AOP"><span class="toc-number">5.</span> <span class="toc-text">4.Spring的IOC、AOP</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-JVM的工作原理"><span class="toc-number">6.</span> <span class="toc-text">5.JVM的工作原理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-SpringCloud实现负载均衡的组件"><span class="toc-number">7.</span> <span class="toc-text">6.SpringCloud实现负载均衡的组件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-了解过微服务框架吗"><span class="toc-number">8.</span> <span class="toc-text">7.了解过微服务框架吗</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#8-StringBuffer、StringBuliuder的区别"><span class="toc-number">9.</span> <span class="toc-text">8.StringBuffer、StringBuliuder的区别</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#9-Java中有多少种排序算法，说说自己熟悉的算法"><span class="toc-number">10.</span> <span class="toc-text">9.Java中有多少种排序算法，说说自己熟悉的算法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#10-常用的设计模式"><span class="toc-number">11.</span> <span class="toc-text">10.常用的设计模式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#11-为什么不使用select"><span class="toc-number">12.</span> <span class="toc-text">11.为什么不使用select *</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#12-了解过Redis的实现原理吗"><span class="toc-number">13.</span> <span class="toc-text">12.了解过Redis的实现原理吗</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#undefined"><span class="toc-number">13.1.</span> <span class="toc-text">Redis数据结构： 五种 </span></a></li></ol></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-number">1.</span> <span class="toc-text">Java常见面试题【2】</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#深入研究java-lang-ThreadLocal类"><span class="toc-number">2.</span> <span class="toc-text">深入研究java.lang.ThreadLocal类</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Java内存模型"><span class="toc-number">3.</span> <span class="toc-text">Java内存模型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#java-GC是在什么时候，对什么东西，做了什么事情"><span class="toc-number">4.</span> <span class="toc-text">java GC是在什么时候，对什么东西，做了什么事情</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#CAS（Compare-And-Swap）-无锁算法"><span class="toc-number">5.</span> <span class="toc-text">CAS（Compare And Swap） 无锁算法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#类加载器工作机制"><span class="toc-number">6.</span> <span class="toc-text">类加载器工作机制</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#索引：B-，B-全文索引"><span class="toc-number">7.</span> <span class="toc-text">索引：B+，B-,全文索引</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Spring-IOC-（控制反转，依赖注入）"><span class="toc-number">8.</span> <span class="toc-text">Spring IOC （控制反转，依赖注入）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Java代理"><span class="toc-number">9.</span> <span class="toc-text">Java代理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#SpringMVC运行原理"><span class="toc-number">10.</span> <span class="toc-text">SpringMVC运行原理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Http请求"><span class="toc-number">11.</span> <span class="toc-text">Http请求</span></a></li></ol>
 </div>
 <style>
     .left-col .switch-btn,
@@ -588,15 +599,13 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2018/06/09/java-interview-2/" title="上一篇: java常见面试题【2】">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2018/06/08/java-interview-1/" title="下一篇: java常见面试题【1】">
+            <a href="/2018/06/08/pingan-interview/" title="下一篇: 平安面试题">
                 <i class="fa fa-angle-right"></i>
             </a>
         

@@ -27,7 +27,7 @@
 <meta property="og:description" content="近期再找工作,复习一波面试题，整理一下常见的Java面试题">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="https://raw.githubusercontent.com/java2ming/image/master/java/concurrent/1.jpg">
-<meta property="og:updated_time" content="2018-06-08T12:16:25.008Z">
+<meta property="og:updated_time" content="2018-06-09T10:15:14.198Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="java常见面试题【1】">
 <meta name="twitter:description" content="近期再找工作,复习一波面试题，整理一下常见的Java面试题">
@@ -340,17 +340,26 @@
 <p>近期再找工作,复习一波面试题，整理一下常见的Java面试题</p>
 </blockquote>
 <a id="more"></a>
-<h4> ArrayList的默认长度</h4><br>&gt; ArrayList的底层是由一个Object[]数组构成的，而这个Object[]数组，默认的长度是10,size()方法，指的是“逻辑”长度。<br>所谓“逻辑”长度，是指内存已存在的“实际元素的长度” 而“空元素不被计算”<br>        即：当你利用add()方法，向ArrayList内添加一个“元素”时，逻辑长度就增加1位。 而剩下的9个空元素不被计算。<br>        每次增长 (旧容量*3/2)+1<br><br><h4> Lock与synchronized 的区别</h4>
-
-<blockquote>
+<p></p><h4> Java常见面试题【1】</h4><p></p>
+<h4 id="ArrayList的默认长度"><a href="#ArrayList的默认长度" class="headerlink" title="ArrayList的默认长度"></a>ArrayList的默认长度</h4><blockquote>
+<p>ArrayList的底层是由一个Object[]数组构成的，而这个Object[]数组，默认的长度是10,size()方法，指的是“逻辑”长度。<br>所谓“逻辑”长度，是指内存已存在的“实际元素的长度” 而“空元素不被计算”<br>        即：当你利用add()方法，向ArrayList内添加一个“元素”时，逻辑长度就增加1位。 而剩下的9个空元素不被计算。<br>        每次增长 (旧容量*3/2)+1</p>
+</blockquote>
+<h4 id="Lock与synchronized-的区别"><a href="#Lock与synchronized-的区别" class="headerlink" title="Lock与synchronized 的区别"></a>Lock与synchronized 的区别</h4><blockquote>
 <ol>
 <li>线程A和B都要获取对象O的锁定，假设A获取了对象O锁，B将等待A释放对O的锁定，<br> 如果使用 synchronized ，如果A不释放，B将一直等下去，不能被中断<br>如果使用 ReentrantLock，如果A不释放，可以使B在等待了足够长的时间以后，中断等待，而干别的事情</li>
 <li>synchronized是在JVM层面上实现的，不但可以通过一些监控工具监控synchronized的锁定，而且在代码执行时出现异常，JVM会自动释放锁定，但是使用Lock则不行，lock是通过代码实现的，要保证锁定一定会被释放，就必须将unLock()放到finally{}中</li>
 <li>在资源竞争不是很激烈的情况下，Synchronized的性能要优于ReetrantLock，但是在资源竞争很激烈的情况下，Synchronized的性能会下降几十倍，但是ReetrantLock的性能能维持常态</li>
 </ol>
 </blockquote>
-<h4>mysql索引类型</h4><br>1. 普通索引<br>2. 唯一索引<br>3. 主键索引<br>4. 组合索引<br>5. 全文索引<br><br><h4>事务特性</h4>
-
+<p>####mysql索引类型</p>
+<ol>
+<li>普通索引</li>
+<li>唯一索引</li>
+<li>主键索引</li>
+<li>组合索引</li>
+<li>全文索引</li>
+</ol>
+<p>####事务特性</p>
 <blockquote>
 <p>事务特性分为四个：原子性（Atomicity）、一致性（Consistency）、隔离性（Isolation）、持续性（Durability）简称ACID。</p>
 </blockquote>
@@ -360,8 +369,7 @@
 <li><strong>隔离性（Isolation）</strong>：一个事务的执行过程中不能影响到其他事务的执行，即一个事务内部的操作及使用的数据对其他事务是隔离的，并发执行各个事务之间无不干扰。</li>
 <li><strong>持续性（Durability）</strong>：即一个事务执一旦提交，它对数据库数据的改变是永久性的。之后的其它操作不应该对其执行结果有任何影响。</li>
 </ul>
-<h4>事务的隔离级别</h4>
-
+<p>####事务的隔离级别</p>
 <blockquote>
 <ol>
 <li>事务的隔离级别也分为四种，由低到高依次分别为：</li>
@@ -383,7 +391,7 @@
 <li><strong>幻读</strong>：一个事务先后读取一个范围的记录，但两次读取的纪录数不同，我们称之为幻象读（两次执行同一条 select 语句会出现不同的结果，第二次读会增加一数据行，并没有说这两次执行是在同一个事务中）</li>
 </ul>
 </blockquote>
-<p></p><h4>spring事务传播特性</h4><br>    &gt; 事务传播行为就是多个事务方法相互调用时，事务如何在这些方法间传播。spring支持7种事务传播行为：<p></p>
+<p>####spring事务传播特性<br>    &gt; 事务传播行为就是多个事务方法相互调用时，事务如何在这些方法间传播。spring支持7种事务传播行为：</p>
 <ul>
 <li><strong>propagation_requierd</strong>：如果当前没有事务，就新建一个事务，如果已存在一个事务中，加入到这个事务中，这是最常见的选择。</li>
 <li><strong>propagation_supports</strong>：支持当前事务，如果没有当前事务，就以非事务方法执行。</li>
@@ -396,7 +404,7 @@
 </blockquote>
 </li>
 </ul>
-<p></p><h4>SQL数据库中的范式</h4><br>    &gt; 事务传播行为就是多个事务方法相互调用时，事务如何在这些方法间传播。spring支持7种事务传播行为：<p></p>
+<p>####SQL数据库中的范式<br>    &gt; 事务传播行为就是多个事务方法相互调用时，事务如何在这些方法间传播。spring支持7种事务传播行为：</p>
 <ul>
 <li><p><strong>第一范式（1NF）</strong>：强调的是列的原子性，即列不能够再分成其他几列。</p>
 <blockquote>
@@ -415,15 +423,15 @@
 <p>  第二范式（2NF）和第三范式（3NF）的概念很容易混淆，区分它们的关键点在于，2NF：非主键列是否完全依赖于主键，还是依赖于主键的一部分；3NF：非主键列是直接依赖于主键，还是直接依赖于非主键列。</p>
 </li>
 </ul>
-<p></p><h4>JDK并发包 java.util.concurrent</h4><br><img src="https://raw.githubusercontent.com/java2ming/image/master/java/concurrent/1.jpg" alt="Alt text"><p></p>
+<p>####JDK并发包 java.util.concurrent<br><img src="https://raw.githubusercontent.com/java2ming/image/master/java/concurrent/1.jpg" alt="JDK并发包框架"></p>
 <blockquote>
 <p>外层框架主要有Lock(ReentrantLock、ReadWriteLock等)、同步器（semaphores等）、阻塞队列（BlockingQueue等）、Executor（线程池）、并发容器（ConcurrentHashMap等）、还有Fork/Join框架；<br>内层有AQS（AbstractQueuedSynchronizer类，锁功能都由他实现）、非阻塞数据结构、原子变量类(AtomicInteger等无锁线程安全类)三种。<br>底层就实现是volatile和CAS。整个并发包其实都是由这两种思想构成的。</p>
 </blockquote>
-<p></p><h4>JDK8新特性</h4><p></p>
+<p>####JDK8新特性</p>
 <blockquote>
 <p> <strong>Lambda 表达式</strong> − Lambda允许把函数作为一个方法的参数（函数作为参数传递进方法中)。<br>    <strong>方法引用</strong> − 方法引用提供了非常有用的语法，可以直接引用已有Java类或对象（实例）的方法或构造器。与lambda联合使用，方法引用可以使语言的构造更紧凑简洁，减少冗余代码。<br>    <strong>默认方法</strong> − 默认方法就是一个在接口里面有了一个实现的方法。新增了default方法和static方法，这两种方法可以有方法体<br>    <strong>新工具 − 新的编译工具</strong>，如：Nashorn引擎 jjs、 类依赖分析器jdeps。<br>    <strong>Stream API</strong> −新添加的Stream API（java.util.stream） 把真正的函数式编程风格引入到Java中。<br>    <strong>Date Time API</strong> − 加强对日期与时间的处理。<br>    <strong>Optional 类</strong> − Optional 类已经成为 Java 8 类库的一部分，用来解决空指针异常。<br>    <strong>Nashorn, JavaScript 引擎</strong> − Java 8提供了一个新的Nashorn javascript引擎，它允许我们在JVM上运行特定的javascript应用。</p>
 </blockquote>
-<p></p><h4>UDP、TCP区别</h4><p></p>
+<p>####UDP、TCP区别</p>
 <blockquote>
 <p>TCP是建立可靠连接，并且通信双方都可以以流的形式发送数据。相对TCP，UDP则是面向无连接的协议。<br>使用UDP协议时，不需要建立连接，只需要知道对方的IP地址和端口号，就可以直接发数据包。但是，能不能到达就不知道了。<br>虽然用UDP传输数据不可靠，但它的优点是和TCP比，速度快，对于不要求可靠到达的数据，就可以使用UDP协议。</p>
 </blockquote>
@@ -438,7 +446,7 @@
         <p><span>本文标题:</span><a href="/2018/06/08/java-interview-1/">java常见面试题【1】</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">Java Ming</a></p>
         <p><span>发布时间:</span>2018-06-08, 17:30:00</p>
-        <p><span>最后更新:</span>2018-06-08, 20:16:25</p>
+        <p><span>最后更新:</span>2018-06-09, 18:15:14</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2018/06/08/java-interview-1/" title="java常见面试题【1】">https://java2ming.github.io/2018/06/08/java-interview-1/</a>
             <span class="copy-path" data-clipboard-text="原文: https://java2ming.github.io/2018/06/08/java-interview-1/　　作者: Java Ming" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
@@ -537,7 +545,7 @@
 
 <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-number">1.</span> <span class="toc-text"> ArrayList的默认长度</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-number">2.</span> <span class="toc-text"> Lock与synchronized 的区别</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-number">3.</span> <span class="toc-text">mysql索引类型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-number">4.</span> <span class="toc-text">事务特性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-number">5.</span> <span class="toc-text">事务的隔离级别</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-number">6.</span> <span class="toc-text">spring事务传播特性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-number">7.</span> <span class="toc-text">SQL数据库中的范式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-number">8.</span> <span class="toc-text">JDK并发包 java.util.concurrent</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-number">9.</span> <span class="toc-text">JDK8新特性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-number">10.</span> <span class="toc-text">UDP、TCP区别</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-number">1.</span> <span class="toc-text"> Java常见面试题【1】</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#ArrayList的默认长度"><span class="toc-number">2.</span> <span class="toc-text">ArrayList的默认长度</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Lock与synchronized-的区别"><span class="toc-number">3.</span> <span class="toc-text">Lock与synchronized 的区别</span></a></li></ol>
 </div>
 <style>
     .left-col .switch-btn,
@@ -601,7 +609,7 @@
         
     </div>
 
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2018/06/08/pingan-interview/">平安面试题</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/06/08/java-interview-1/">java常见面试题【1】</a></li></ul>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2018/06/09/java-interview-2/">java常见面试题【2】</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/06/08/pingan-interview/">平安面试题</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/06/08/java-interview-1/">java常见面试题【1】</a></li></ul>
 
 
 
