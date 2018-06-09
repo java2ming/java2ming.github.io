@@ -284,54 +284,6 @@
     /*}*/
 </style>
 
-<script>
-
-    function getPgjs() {
-        var agent = navigator.userAgent.toLowerCase();
-        var res = agent.match(/android/);
-        if (res == "android")
-            return res;
-        res = agent.match(/iphone/);
-        if (res == "iphone")
-            return "ios";
-        res = agent.match(/ipad/);
-        if (res == "ipad")
-            return "ios";
-        res = agent.match(/windows/);
-        if (res == "windows")
-            return "wp";
-        return "pc";
-    }
-
-    function loadImage(id) {
-        var page = window.location.pathname
-        if (page.indexOf("about") !== -1) {
-            return;
-        }
-//            var result = getPgjs();
-//            if(result=="wp"){
-//                $(".fengmian").hide();
-//                console.log(result);
-//                return;
-//            }
-        var backgroundnum = 60;
-        var randomIndex = Math.ceil(Math.random() * backgroundnum);
-        var result = randomIndex + "?version=" + (new Date() / 1000);
-        var backgroundimg = "https://raw.githubusercontent.com/java2ming/image/master/background/bg-number.jpg".replace(/number/gi, randomIndex);
-        var key = "#" + id;
-        $(key).attr("src", backgroundimg);
-        $(".fengmian").show();
-    }
-
-    (function () {
-        var page = window.location.pathname
-        if (page.indexOf("about") !== -1) {
-            console.log(page)
-            $(".fenagmian").hide();
-//                $("#comments").remove();
-        }
-    })()
-</script>
 
 <article id="post-java-interview-2" class="article article-type-post" itemscope itemprop="blogPost">
     
@@ -346,7 +298,7 @@
         <input type="hidden" class="isFancy"/>
         
         <div class="fengmian">
-            <img class="fengmian-image" id="java-interview-2" alt="封面" onload="loadImage(this.id)"/>
+            <img class="fengmian-image" id="java-interview-2" src="https://raw.githubusercontent.com/java2ming/image/master/cover/bg-45.jpg" alt="封面" onload="loadImage(this.id)"/>
         </div>
         
         <header class="article-header">
@@ -521,7 +473,54 @@
     </nav>
 
     
+    <script>
 
+        function getPgjs() {
+            var agent = navigator.userAgent.toLowerCase();
+            var res = agent.match(/android/);
+            if (res == "android")
+                return res;
+            res = agent.match(/iphone/);
+            if (res == "iphone")
+                return "ios";
+            res = agent.match(/ipad/);
+            if (res == "ipad")
+                return "ios";
+            res = agent.match(/windows/);
+            if (res == "windows")
+                return "wp";
+            return "pc";
+        }
+
+        function loadImage(id) {
+            var page = window.location.pathname
+            if (page.indexOf("about") !== -1) {
+                return;
+            }
+//            var result = getPgjs();
+//            if(result=="wp"){
+//                $(".fengmian").hide();
+//                console.log(result);
+//                return;
+//            }
+            var backgroundnum = 60;
+            var randomIndex = Math.ceil(Math.random() * backgroundnum);
+            var result = randomIndex + "?version=" + (new Date() / 1000);
+            var backgroundimg = "https://raw.githubusercontent.com/java2ming/image/master/background/bg-number.jpg".replace(/number/gi, randomIndex);
+            var key = "#" + id;
+            $(key).attr("src", backgroundimg);
+            $(".fengmian").show();
+        }
+
+        (function () {
+            var page = window.location.pathname
+            if (page.indexOf("about") !== -1) {
+                console.log(page)
+                $(".fenagmian").hide();
+//                $("#comments").remove();
+            }
+        })()
+    </script>
 </article>
 <!-- 代码1：放在页面需要展示的位置  -->
 <!-- 如果您配置过sourceid，建议在div标签中配置sourceid、cid(分类id)，没有请忽略  -->
